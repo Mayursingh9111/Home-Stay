@@ -31,12 +31,68 @@ A full-stack hotel booking platform where users can search, view, and book hotel
 - Cloudinary integration for optimized hotel images.
 - RESTful API backend with secure endpoints.
 
+### 🧑‍💼 User
+- Register/Login
+- Search hotels and rooms
+- Check room availability
+- Book a room
+- View booking history
+
+### 🏢 Hotel Owner
+- Register a hotel
+- Add multiple rooms with images
+- Toggle room availability
+- View bookings for their hotel
+
 ---
 
-## 🚀 Getting Started
+## 🔧 Tech Stack
 
-```bash
-git clone https://github.com/Mayursingh9111/hotel-booking.git
-cd hotel-booking
-npm install
-npm start
+- **Frontend:** React.js, Tailwind CSS (or CSS)
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB Atlas
+- **Authentication:** Clerk or JWT-based
+- **File Uploads:** Multer (for room images)
+
+---
+
+## 🔌 API Endpoints
+
+### 🔹 User Routes (`/api/user`)
+
+| Method | Endpoint                     | Description                            |
+|--------|------------------------------|----------------------------------------|
+| GET    | `/api/user/`                 | Get logged-in user data                |
+| POST   | `/api/user/store-recent-search` | Store recently searched cities      |
+
+---
+
+### 🔹 Hotel Routes (`/api/hotel`)
+
+| Method | Endpoint        | Description              |
+|--------|-----------------|--------------------------|
+| POST   | `/api/hotel/`   | Register a hotel (owner) |
+
+---
+
+### 🔹 Room Routes (`/api/room`)
+
+| Method | Endpoint                        | Description                             |
+|--------|----------------------------------|-----------------------------------------|
+| POST   | `/api/room/`                    | Create room with up to 4 images         |
+| GET    | `/api/room/`                    | Get list of available rooms             |
+| GET    | `/api/room/owner`              | Get owner’s listed rooms                |
+| POST   | `/api/room/toggle-availability` | Toggle availability of a specific room  |
+
+---
+
+### 🔹 Booking Routes (`/api/booking`)
+
+| Method | Endpoint                         | Description                        |
+|--------|----------------------------------|------------------------------------|
+| POST   | `/api/booking/check-availability` | Check if room is available        |
+| POST   | `/api/booking/book`              | Book a room (authenticated)        |
+| GET    | `/api/booking/user`              | Get current user's bookings        |
+| GET    | `/api/booking/hotel`             | Get bookings for a hotel owner     |
+
+---
