@@ -96,3 +96,30 @@ A full-stack hotel booking platform where users can search, view, and book hotel
 | GET    | `/api/booking/hotel`             | Get bookings for a hotel owner     |
 
 ---
+
+# 1. Clone the repository
+git clone https://github.com/Mayursingh9111/Home-Stay
+cd hotel-booking
+
+# 2. Install backend dependencies
+cd backend
+npm install
+
+# 3. Create a .env file in backend folder
+touch .env
+
+# 4. Add the following environment variables in .env
+PORT=5000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+
+# 5. Start the backend server
+npm run dev
+
+# 6. Open a new terminal and install frontend dependencies
+cd ../frontend
+npm install
+
+# 7. Start the frontend server
+npm start
+
